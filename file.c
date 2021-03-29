@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-int sum(int a, int b)
+void salute()
 {
-	return a + b;
+	char nume[101];
+	scanf("%100s", nume);
+	printf("Hello, %s!", nume);
 }
 
 int main()
