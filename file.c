@@ -9,6 +9,6 @@ void salute()
 
 int main()
 {
-	printf("DA");
+	salute();
 	return 0;
 }
