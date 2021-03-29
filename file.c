@@ -1,12 +1,8 @@
 #include <stdio.h>
 
-int sum(int a, int b)
-{
-	return a + b;
-}
 
 int main()
 {
-	printf("DA");
+	printf("Hello, Demo User!");
 	return 0;
 }
