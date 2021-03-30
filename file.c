@@ -3,6 +3,7 @@
 void salute()
 {
 	char nume[101];
+	printf("What is your name?\n");
 	scanf("%100s", nume);
 	printf("Hello, %s!", nume);
 }
