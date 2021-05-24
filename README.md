@@ -133,9 +133,9 @@ udp6       0      0 ::1:323                 :::*                                
 
 Porturile in state-ul LISTEN sunt:
 ```
-  PORT		    Service				        Protocol		
+  PORT		    Service			Protocol		
 - Portul 53: 	DNS (Domain Name Service) 	tcp
-- Portul 22: 	SSH (Secure Shell)		    tcp
+- Portul 22: 	SSH (Secure Shell)		tcp
 ```
 
 Dezactivam traficul HTTP si HTTPS din setarile masinii virtuale pentru a fi siguri ca accesarea se va
