@@ -1,4 +1,6 @@
 # Server SFTP
+Server SFTP cu utilizator ”anonim” si utilizatori cu autentificare. Spatiu limitat (quoata) pentru utilizatori (ex. 2GB per utilizator). Permiteti
+acces din exterior doar pe porturile necesare.
 
 ### Virtual Machine Setup
 
