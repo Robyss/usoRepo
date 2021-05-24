@@ -2,7 +2,7 @@
 Server SFTP cu utilizator ”anonim” si utilizatori cu autentificare. Spatiu limitat (quoata) pentru utilizatori (ex. 2GB per utilizator). Permiteti
 acces din exterior doar pe porturile necesare.
 
-### Virtual Machine Setup
+## Virtual Machine Setup
 
 Am folosit platforma Google Cloud Platform pentru a implementa serverul nostru sftp. Cream o instanta VM numita 'sftp' cu regiunea in europe-west3 (Frankfurt), 
 pe sistemul de operare Ubuntu, versiunea 20.04 LTS si un spatiu de stocare de 10GB. 
