@@ -6,6 +6,7 @@ acces din exterior doar pe porturile necesare.
 
 Am folosit platforma Google Cloud Platform pentru a implementa serverul nostru sftp. Cream o instanta VM numita 'sftp' cu regiunea in europe-west3 (Frankfurt), 
 pe sistemul de operare Ubuntu, versiunea 20.04 LTS si un spatiu de stocare de 10GB. 
+![Virtual Machine][/images/VM-photo.img)
 
 Dupa ce ne adaugam cheia publica in instanta, putem accesa serverul folosind SSH la IP-ul extern 35.246.181.166.
 
