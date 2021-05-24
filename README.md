@@ -107,7 +107,47 @@ a dispozitivului de pe care doriti sa intrati.
 
 
 ## Quotele 
+Quota este o functie construita in kernel-ul Linuxului care este folosita pentru a seta o limita de memorie dedicata unui user sau unui grup. Totodata, este folosita petru a limita numarul maxim de fisiere care ar putea crea de un user sau de un grup.
+Prima data, trebuie sa se instaleze quota, iar pentru a face acest lucru se recomanda mai intai actualizarea sistemului, dupa care download-area si instalarea functiei prin urmatoarele comenzi:
+```
+apt update
+apt install quota
+```
+Dupa aceea, trebuie activata functia quota fie pentru un user, fie pentru un grup sau chiar pentru ambele. In cazul acesta se activeaza functia quota pentru un grup astfel:
 
+Intram cu nano in fisierul /etc/fstab si adaugam linia
+```
+LABEL=cloudimg-rootfs / ext4 defaults,grpquota 0 1
+``` 
+Salvam fisierul si ii dam un `reboot` si mountam filedisk-urile uitilizand
+
+
+``sudo mount -o remount grpquota / ``
+sau 
+``sudo mount -o remount / ``
+
+Urmatoare comanda va crea un nou fisier quota in directorul root din filesystem. Acesta va fi un fisier index folosit de quota pentru a monitoriza memoria utilizara de catre grup. De asemenea, contine limitari si optiuni de configuratii pentru grup.
+```
+sudo quotacheck -cgm / 
+```
+* Parametrul c indica crearea unui nou fisier si rescrierea oricarui fisier precedent.
+* Parametrul g indica faptul ca un nou fisier index ar trebui create pentru un grup.
+* Parametrul m indica faptull ca niciun read-only mount al filesystem-ului  este necesar pentru a genera fisierele index.
+
+Urmatoarea comanda anunta sistemul ca disk quota ar trebui pornit pe filesystem-ul dorit.
+```
+quotaon / 
+```
+Pentru a configura quota la grupul sftp folosim:
+```
+edquota -g sftp
+```
+Editam la soft si hard in functie de datele cerute, in cazul nostru alocam la soft 2000000 (adica 2 GB), iar la hard 2097152 (adica 2 GB completi).
+* Soft block este limita grupului sau a user-ului din filesystem
+* Hard block este limita grupului sau a user-ului pe care filesystem-ul nu are voie sa o depaseasca.
+
+
+Astfel, fiecare utilizator din grupul sftp va putea incarca maxim 2GB spatiu de stocare.
 
 ## Porturi
 
